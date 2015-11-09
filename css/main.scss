@@ -14,7 +14,8 @@ $base-line-height: 1.5;
 $spacing-unit:     30px;
 
 $text-color:       #111;
-$background-color: #fdfdfd;
+$background-color: hsla(0, 0%, 100%, 1);
+$content-background-color: hsla(0, 0%, 100%, 0.2);
 $brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
@@ -47,3 +48,8 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+@import
+        "../css/site"
+;
+

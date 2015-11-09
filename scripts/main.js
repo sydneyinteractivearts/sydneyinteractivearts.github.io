@@ -1,54 +1,74 @@
 
 
-var shape = new Path.Line({
-    //point: [0, 0],
-    //size: [1, 100],
-    from: [0,-70],
-    to: [0, 70],
-    strokeColor: 'orange',
-    strokeWidth: 7,
-    strokeCap: 'round'
-});
 
+//var shape = ;
 
-//var shape = new Path.RegularPolygon({
-//    center: [0, 0],
-//    sides: 6,
-//    radius: 20,
-//    fillColor: {
-//        hue: 100,
-//        saturation: 1,
-//        brightness: 0,
-//        alpha: 0.95
-//    }
-//});
+function createItem(x, y) {
+    // factory for random shape
+    // return the shape
 
-var symbol = new Symbol(shape);
-var symbols = [];
+    var item;
+    switch(Math.floor(Math.random()*2)) {
+        case 0:
+            item = new Path.Line({
+                from: [x,y-70],
+                to: [x, y+70],
+                strokeColor: 'orange',
+                strokeWidth: 7,
+                strokeCap: 'round'
+            });
+            break;
+        case 1:
+            item = new Path.RegularPolygon({
+                center: [x, y],
+                sides: 6,
+                radius: 20,
+                fillColor: {
+                    hue: 100,
+                    saturation: 1,
+                    brightness: 0.8,
+                    alpha: 0.95
+                }
+            });
+            break;
+        default:
+            console.log('woooo');
+            break;
+    }
+    return item;
+}
+
+var items = [];
 
 var STEP = 25;
 
+for(var y=0; y<view.viewSize.height; y+=STEP) {
+    for(var x=0; x<view.viewSize.width; x+=STEP) {
+        var item = createItem(x, y);
+        item.data.uniqueRotation = (y+x)*0.005;
+        items.push(item);
+    }
+}
 
 function onFrame(event) {
-    for(var i=0; i<symbols.length; i++) {
-        var instance = symbols[i];
-        instance.rotate(instance.data.uniqueRotation);
-        //console.log(instance.fillColor);
+    var now = Date.now();
+    
+    for(var i=0; i<items.length; i++) {
+        var item = items[i];
+        item.rotate(item.data.uniqueRotation);
+        if(item.strokeColor) {
+            item.strokeColor.hue += i*0.0015;    
+        } else if(item.fillColor) {
+            item.fillColor.hue -= i*0.0015;
+        }
+        
         
         //symbol.scale(1 + (Date.now() * 0.000000000000001));
     }
-    symbol.definition.strokeColor.hue += 0.15;
     
 }
 
 function onResize(event) {
 
-    symbols = [];
-    for(var h=0; h<view.viewSize.height; h+=STEP) {
-        for(var w=0; w<view.viewSize.width; w+=STEP) {
-            var placedSymbol = symbol.place(new Point(w, h));
-            placedSymbol.data.uniqueRotation = (h+w)*0.005;
-            symbols.push(placedSymbol);
-        }
-    }
+
 }

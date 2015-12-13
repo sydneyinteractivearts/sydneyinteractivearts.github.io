@@ -7,7 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: sydney_iam
 github_username:  sydneyinteractivearts
-exclude: [bower_components]
+exclude: [bower_components, node_modules, gulpfile.js]
 
 # Build settings
 markdown: kramdown

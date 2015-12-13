@@ -1,6 +1,7 @@
 _site
 .sass-cache
 .idea/
+scripts/main-compiled.js
 
 node_modules/
 # Will use CDN builds for production

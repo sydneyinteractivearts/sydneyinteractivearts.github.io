@@ -22,7 +22,9 @@ gulp.task('serve', function() {
         },
         open: false
     });
-    gulp.watch('_site/**/*.*').on('change', browserSync.reload);
+
+    gulp.watch('_scripts/**/*.js').on('change', browserSync.reload);
+
 });
 
 

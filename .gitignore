@@ -2,5 +2,6 @@ _site
 .sass-cache
 .idea/
 
+node_modules/
 # Will use CDN builds for production
 bower_components/

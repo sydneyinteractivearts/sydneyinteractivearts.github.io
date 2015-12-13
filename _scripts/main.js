@@ -1,16 +1,16 @@
 
 const config = {
     sizeScalar: 2.3
-}; 
+};
 
 class ShapeFactory {
-    
+
     static getConfig() {
         return {
             size: 10*config.sizeScalar
         }
     }
-    
+
     static Line(x, y) {
         return new Path.Line({
             from: [x, y-ShapeFactory.getConfig().size],
@@ -20,7 +20,7 @@ class ShapeFactory {
             strokeCap: 'round'
         })
     }
-    
+
     static Polygon(x, y, sides) {
         let colorProps = {
             hue: 100,
@@ -28,9 +28,10 @@ class ShapeFactory {
             brightness: 0.8,
             alpha: 0.95
         };
-        
+
         let type = Math.random() < 0.5 ? 'fill' : 'stroke';
-        
+        type = 'stroke';
+
         if(type === 'fill') {
             const RADIUS_SCALAR = 2;
             return new Path.RegularPolygon({
@@ -38,8 +39,8 @@ class ShapeFactory {
                 sides: sides,
                 radius: ShapeFactory.getConfig().size*RADIUS_SCALAR,
                 fillColor: colorProps
-            });    
-            
+            });
+
         } else {
             const RADIUS_SCALAR = 1.3;
             const STROKE_SCALAR= 0.9;
@@ -52,13 +53,13 @@ class ShapeFactory {
             });
         }
     }
-    
+
     static Arc(x, y) {
-        
+
         let offset = 12;
         let offset2 = offset*.71425;
         const STROKE_SCALAR = 0.8;
-        
+
         return new Path.Arc({
             center: [x, y],
             from: [x-offset, y],
@@ -73,7 +74,7 @@ class ShapeFactory {
             strokeWidth: ShapeFactory.getConfig().size*STROKE_SCALAR
         })
     }
-    
+
 }
 
 
@@ -140,7 +141,7 @@ var blendRect = new Path.Rectangle({
         destination: view.viewSize
     },
     blendMode: 'screen'
-});   
+});
 
 
 

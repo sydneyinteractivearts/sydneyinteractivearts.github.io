@@ -7,7 +7,7 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  //z-index: -1;
 }
 
 /* Scale canvas with resize attribute to full size */
@@ -19,6 +19,17 @@ canvas[data-paper-resize] {
 
 .page-content {
   width: 75%;
-  margin: 5% auto 0 auto;
-  background-color: $content-background-color;
+  margin: 0 auto;
+  position: relative;
+  
+  
+  .wrapper {
+    padding-top: 5%;
+    background-color: $content-background-color;  
+    .home {
+      p {
+        color: #222;
+      }
+    }
+  }
 }

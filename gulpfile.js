@@ -15,6 +15,8 @@ gulp.task('transpile', function() {
 
 gulp.task('build', shell.task(['bundle exec jekyll build --watch']));
 
+gulp.task('livereload', browserSync.reload);
+
 gulp.task('serve', function() {
     browserSync.init({
         server: {
@@ -22,9 +24,8 @@ gulp.task('serve', function() {
         },
         open: false
     });
-
-    gulp.watch('_scripts/**/*.js').on('change', browserSync.reload);
-
+    
+    gulp.watch('_scripts/**/*.js', ['transpile', 'livereload']);
 });
 
 

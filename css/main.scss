@@ -14,10 +14,10 @@ $base-line-height: 1.5;
 $spacing-unit:     30px;
 
 $text-color:       #111;
-$background-color: hsla(0, 0%, 100%, 1);
-$content-background-color: hsla(0, 0%, 100%, 0.2);
-$brand-color:      #2a7ae2;
+$background-color: white;
+$content-background-color: rgba(255, 255, 255, 0.95);
 
+$brand-color:      #2a7ae2;
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);

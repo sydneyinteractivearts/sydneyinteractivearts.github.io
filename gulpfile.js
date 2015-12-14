@@ -5,12 +5,12 @@ var shell = require('gulp-shell');
 var rename = require('gulp-rename');
 
 gulp.task('transpile', function() {
-    return gulp.src('_scripts/main.js')
+    return gulp.src('_assets/scripts/main.js')
     .pipe(babel({
         presets: ['es2015']
     }))
-    .pipe(rename('main-compiled.js'))
-    .pipe(gulp.dest('scripts/'))
+    .pipe(rename('main.compiled.js'))
+    .pipe(gulp.dest('_assets/scripts/'))
 });
 
 gulp.task('build', shell.task(['bundle exec jekyll build --watch']));
@@ -25,7 +25,7 @@ gulp.task('serve', function() {
         open: false
     });
     
-    gulp.watch('_scripts/**/*.js', ['transpile', 'livereload']);
+    gulp.watch('_assets/scripts/main.js', ['transpile', 'livereload']);
 });
 
 

@@ -12,5 +12,8 @@ exclude: [bower_components, node_modules, gulpfile.js]
 sass:
   style: compressed
 
+asset_pipeline:
+  compress: true # set to false if you want to debug
+
 # Build settings
 markdown: kramdown

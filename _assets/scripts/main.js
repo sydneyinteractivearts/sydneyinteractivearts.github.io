@@ -64,7 +64,6 @@ class ShapeFactory {
 }
 
 
-
 function createItem(x, y) {
     // factory for random shape
     // return the shape
@@ -158,16 +157,20 @@ var init = function() {
 };
 
 
+paper.install(window);
 
+window.onload = function() {
+    
+    paper.setup('background-canvas');
 
-
-function onFrame() {
-
-    for(var i=0; i<items.length; i++) {
-        var item = items[i];
-        item.rotate(item.data.uniqueRotation);
-    }
-
+    init();
+    
+    view.onFrame = function() {
+        for(var i=0; i<items.length; i++) {
+            var item = items[i];
+            item.rotate(item.data.uniqueRotation);
+        }
+    };
+    
+    view.onResize = _.debounce(init, 200, false);
 }
-
-var onResize = _.debounce(init, 200, false);

@@ -12,8 +12,23 @@
 
   </div>
 
-  <script src="/scripts/vendor/paper-full.js"></script>
-  <script src="/scripts/vendor/underscore.js"></script>
-  <script type="text/paperscript" canvas="background-canvas" src="/scripts/main-compiled.js"></script>
+  {% if jekyll.environment == "development" %}
+  
+    {% javascript_asset_tag global %}
+    - /_assets/scripts/vendor/paper-full.min.js
+    - /_assets/scripts/vendor/underscore.js
+    {% endjavascript_asset_tag %}
+
+  {% else if jekyll.environment == "production" %}
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.25/paper-full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  
+  {% endif %}
+  
+  
+  {% javascript_asset_tag global %}
+  - /_assets/scripts/main.compiled.js
+  {% endjavascript_asset_tag %}
   
 </footer>

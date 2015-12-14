@@ -66,6 +66,9 @@ GEM
       redcarpet (~> 3.1)
       safe_yaml (~> 1.0)
       toml (~> 0.1.0)
+    jekyll-asset-pipeline (0.1.2)
+      jekyll (>= 0.10.0)
+      liquid (>= 1.9.0)
     jekyll-coffeescript (1.0.1)
       coffee-script (~> 2.2)
     jekyll-feed (0.3.1)
@@ -121,12 +124,15 @@ GEM
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     yajl-ruby (1.2.1)
+    yui-compressor (0.12.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   github-pages
+  jekyll-asset-pipeline
+  yui-compressor
 
 BUNDLED WITH
    1.10.6

@@ -4,7 +4,6 @@
 @charset "utf-8";
 
 
-
 // Our variables
 $base-font-family: Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
@@ -26,27 +25,26 @@ $on-palm:          600px;
 $on-laptop:        800px;
 
 
-
-// Using media queries with like this:
+// Using media queries like this:
 // @include media-query($palm) {
 //     .wrapper {
 //         padding-right: $spacing-unit / 2;
 //         padding-left: $spacing-unit / 2;
 //     }
 // }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
 
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting",
-        "custom"
+  "base",
+  "layout",
+  "syntax-highlighting",
+  "custom"
 ;
 

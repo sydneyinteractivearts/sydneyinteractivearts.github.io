@@ -9,5 +9,8 @@ twitter_username: sydney_iam
 github_username:  sydneyinteractivearts
 exclude: [bower_components, node_modules, gulpfile.js]
 
+sass:
+  style: compressed
+
 # Build settings
 markdown: kramdown

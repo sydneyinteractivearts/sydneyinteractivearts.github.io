@@ -20,10 +20,10 @@ canvas[data-paper-resize] {
   width: 75%;
   margin: $spacing-unit*2.5 auto 0 auto;
   position: relative;
+  background-color: $content-background-color;
 
   .wrapper {
     padding-top: 5%;
-    background-color: $content-background-color;  
     .home {
       p {
         color: #222;

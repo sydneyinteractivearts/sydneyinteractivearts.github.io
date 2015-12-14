@@ -56,9 +56,9 @@ class ShapeFactory {
 
     static Arc(x, y) {
 
-        let offset = 12;
+        let offset = 24;
         let offset2 = offset*.71425;
-        const STROKE_SCALAR = 0.8;
+        const STROKE_SCALAR = 0.4;
 
         return new Path.Arc({
             center: [x, y],

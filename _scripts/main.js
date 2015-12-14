@@ -92,43 +92,70 @@ function createItem(x, y) {
     return item;
 }
 
-/*
- * Create White bg
- */
-var whiteBg = new Path.Rectangle({
-    topLeft: new Point(0,0),
-    bottomRight: view.viewSize,
-    fillColor: 'white'
-});
 
 var items = [];
 
-let STEP = 55*(config.sizeScalar*0.85);
 
-for(var y=0; y<view.viewSize.height; y+=STEP) {
-    for(var x=0; x<view.viewSize.width; x+=STEP) {
-        var item = createItem(x, y);
-        item.data.uniqueRotation = (Math.random() - 0.5) * 5; //(y+x)*0.005
-        items.push(item);
-    }
-}
-
-/*
- * Create blending rectangle on top
- */
-var blendRect = new Path.Rectangle({
-    topLeft: new Point(0,0),
-    bottomRight: view.viewSize,
-    fillColor: {
-        gradient: {
-            stops: ['yellow', 'purple', 'green', 'red', 'blue']
+var Overlay = (() => {
+    
+    return {
+        createBackground: () => {
+            var whiteBg = new Path.Rectangle({
+                topLeft: new Point(0,0),
+                bottomRight: view.viewSize,
+                fillColor: 'white'
+            });
         },
-        origin: new Point(0,0),
-        destination: view.viewSize
-    },
-    blendMode: 'screen'
-});
+        createFront: () => {
+            var blendRect = new Path.Rectangle({
+                topLeft: new Point(0,0),
+                bottomRight: view.viewSize,
+                fillColor: {
+                    gradient: {
+                        stops: ['blue', 'green', 'red', 'blue']
+                    },
+                    origin: new Point(0,0),
+                    destination: view.viewSize
+                },
+                blendMode: 'screen'
+            });
+        }
+        
+    }
+    
+})();
 
+var Shapes = (() => {
+
+    let STEP = 55*(config.sizeScalar*0.85);
+    
+    return {
+        clear: () => {
+            if(paper.project.isEmpty()) {
+                return;
+            }
+            items.length = 0;
+            console.log(paper);
+            paper.project.clear();
+        },
+        create: () => {
+            for(var y=0; y<view.viewSize.height+STEP*2; y+=STEP) {
+                for(var x=0; x<view.viewSize.width+STEP*2; x+=STEP) {
+                    var item = createItem(x, y);
+                    item.data.uniqueRotation = (Math.random() - 0.5) * 5; //(y+x)*0.005
+                    items.push(item);
+                }
+            }
+        }
+    }
+})();
+
+var init = function() {
+    Shapes.clear();
+    Overlay.createBackground();
+    Shapes.create();
+    Overlay.createFront();
+};
 
 
 

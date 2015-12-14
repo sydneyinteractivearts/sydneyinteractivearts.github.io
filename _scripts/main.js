@@ -170,7 +170,4 @@ function onFrame() {
 
 }
 
-function onResize(event) {
-
-
-}
+var onResize = _.debounce(init, 200, false);

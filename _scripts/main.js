@@ -29,29 +29,15 @@ class ShapeFactory {
             alpha: 0.95
         };
 
-        let type = Math.random() < 0.5 ? 'fill' : 'stroke';
-        type = 'stroke';
-
-        if(type === 'fill') {
-            const RADIUS_SCALAR = 2;
-            return new Path.RegularPolygon({
-                center: [x, y],
-                sides: sides,
-                radius: ShapeFactory.getConfig().size*RADIUS_SCALAR,
-                fillColor: colorProps
-            });
-
-        } else {
-            const RADIUS_SCALAR = 1.3;
-            const STROKE_SCALAR= 0.4;
-            return new Path.RegularPolygon({
-                center: [x, y],
-                sides: sides,
-                radius: ShapeFactory.getConfig().size*RADIUS_SCALAR,
-                strokeWidth: ShapeFactory.getConfig().size*STROKE_SCALAR,
-                strokeColor: colorProps
-            });
-        }
+        const RADIUS_SCALAR = 1.3;
+        const STROKE_SCALAR= 0.4;
+        return new Path.RegularPolygon({
+            center: [x, y],
+            sides: sides,
+            radius: ShapeFactory.getConfig().size*RADIUS_SCALAR,
+            strokeWidth: ShapeFactory.getConfig().size*STROKE_SCALAR,
+            strokeColor: colorProps
+        });
     }
 
     static Arc(x, y) {

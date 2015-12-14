@@ -43,7 +43,7 @@ class ShapeFactory {
 
         } else {
             const RADIUS_SCALAR = 1.3;
-            const STROKE_SCALAR= 0.9;
+            const STROKE_SCALAR= 0.4;
             return new Path.RegularPolygon({
                 center: [x, y],
                 sides: sides,

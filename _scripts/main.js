@@ -15,7 +15,7 @@ class ShapeFactory {
         return new Path.Line({
             from: [x, y-ShapeFactory.getConfig().size],
             to: [x, y+ShapeFactory.getConfig().size],
-            strokeColor: 'orange',
+            strokeColor: _.sample(['blue', 'green']),
             strokeWidth: ShapeFactory.getConfig().size*0.5,
             strokeCap: 'round'
         })

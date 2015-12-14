@@ -167,20 +167,12 @@ var init = function init() {
     Overlay.createFront();
 };
 
-paper.install(window);
+function onFrame() {
 
-window.onload = function () {
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        item.rotate(item.data.uniqueRotation);
+    }
+}
 
-    paper.setup('background-canvas');
-
-    init();
-
-    view.onFrame = function () {
-        for (var i = 0; i < items.length; i++) {
-            var item = items[i];
-            item.rotate(item.data.uniqueRotation);
-        }
-    };
-
-    view.onResize = _.debounce(init, 200, false);
-};
+var onResize = _.debounce(init, 200, false);

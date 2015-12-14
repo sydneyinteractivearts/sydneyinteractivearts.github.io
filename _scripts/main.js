@@ -16,7 +16,7 @@ class ShapeFactory {
             from: [x, y-ShapeFactory.getConfig().size],
             to: [x, y+ShapeFactory.getConfig().size],
             strokeColor: 'orange',
-            strokeWidth: ShapeFactory.getConfig().size*0.7,
+            strokeWidth: ShapeFactory.getConfig().size*0.5,
             strokeCap: 'round'
         })
     }

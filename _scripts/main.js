@@ -131,21 +131,14 @@ var blendRect = new Path.Rectangle({
 
 
 
-function onFrame(event) {
+
+
+
+function onFrame() {
 
     for(var i=0; i<items.length; i++) {
         var item = items[i];
-        //
         item.rotate(item.data.uniqueRotation);
-
-        //if(item.strokeColor) {
-        //    item.strokeColor.hue += i*0.0015;    
-        //} else if(item.fillColor) {
-        //    item.fillColor.hue -= i*0.0015;
-        //}
-
-
-        //symbol.scale(1 + (Date.now() * 0.000000000000001));
     }
 
 }

@@ -11,6 +11,7 @@ body {
     padding: 0;
     color: #111;
     background-color: white;
+    font-family: Futura, Helvetica, sans-serif;
 }
 
 
@@ -70,7 +71,6 @@ body {
     padding: 4% 15%;
     font-size: 19px;
     background-color: rgba(255, 255, 255, 0.95);
-    font-family: Futura;
     line-height: 1.45;
     position: relative;
 }
@@ -83,7 +83,7 @@ body {
 
 
 h2 {
-    font-family: 'F2F Blurczyk';
+    font-family: 'F2F Blurczyk', Futura, Helvetica, sans-serif;
     font-size: 27px;
     padding-top: 2rem;
     line-height: normal;

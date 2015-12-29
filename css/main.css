@@ -14,6 +14,12 @@ body {
     font-family: Futura, Helvetica, sans-serif;
 }
 
+a {
+    transition: 0.7s linear all;
+}
+a:hover {
+    transition: 0.7s linear all;
+}
 
 #bg-video {
     width: 100%;

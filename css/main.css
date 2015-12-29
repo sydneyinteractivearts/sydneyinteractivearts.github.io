@@ -3,11 +3,10 @@ html {
     font-size: 19px;
 }
 body {
-    font-weight: lighter;
+    margin: 0;
+    padding: 0;
     color: #111;
     background-color: white;
-    padding: 0;
-    margin: 0;
 }
 
 
@@ -82,7 +81,6 @@ body {
 h2 {
     font-family: 'F2F Blurczyk';
     font-size: 27px;
-    font-weight: bold;
     padding-top: 2rem;
     line-height: normal;
 }

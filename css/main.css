@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "F2F Blurczyk";
+    src: url("/font/F2FBlurczyk-Medium.otf");
+}
 
 html {
     font-size: 19px;

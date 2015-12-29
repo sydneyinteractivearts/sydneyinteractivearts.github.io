@@ -27,14 +27,16 @@ body {
     padding: 4% 15%;
     font-size: 19px;
     background-color: rgba(255, 255, 255, 0.95);
-    font-family: 'F2F Blurczyk', Futura;
-    font-weight: 400;
+    font-family: Futura;
+    line-height: 1.45;
     position: relative;
-    
-    line-height: 1.4;
 }
 
+
 h2 {
-    font-size: 22px;
+    font-family: 'F2F Blurczyk';
+    font-size: 27px;
     font-weight: bold;
+    padding-top: 2rem;
+    line-height: normal;
 }

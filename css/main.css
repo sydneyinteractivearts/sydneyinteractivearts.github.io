@@ -14,6 +14,39 @@ body {
     position: fixed;
 }
 
+.credit {
+    display: block;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+.credit>a {
+    text-decoration: none;
+    color: rgba(84, 88, 77,1);
+    font-size: 15px;
+    font-family: 'F2F Blurczyk', Futura, Helvetica, sans-serif;
+}
+.credit>a:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.container>.credit {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .credit {
+        display: none;
+    }
+    .container>.credit {
+        display: block;
+        position: static;
+    }
+    .container>.credit>a {
+        font-size: 10px;
+    }
+}
+
 .container {
     width: 75%;
     max-width: 525px;
@@ -30,6 +63,12 @@ body {
     font-family: Futura;
     line-height: 1.45;
     position: relative;
+}
+
+@media (max-width: 768px) {
+    .content {
+        font-size: 0.7rem;
+    }
 }
 
 

@@ -1,5 +1,8 @@
+
+html {
+    font-size: 19px;
+}
 body {
-    font-size: 0;
     font-weight: lighter;
     color: #111;
     background-color: white;
@@ -45,6 +48,10 @@ body {
     .container>.credit>a {
         font-size: 10px;
     }
+}
+
+.header {
+    font-size: 0; /* to remove bottom gap of svg */
 }
 
 .container {
